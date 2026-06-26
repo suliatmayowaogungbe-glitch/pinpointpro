@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>PinPoint Pro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      :root {
+        --nebula-1: #3b82f6; --nebula-2: #9333ea; --nebula-3: #6366f1; --nebula-4: #ec4899;
+        --sunrise-1: #f97316; --sunrise-2: #ef4444; --sunrise-3: #f59e0b; --sunrise-4: #db2777;
+        --ocean-1: #06b6d4; --ocean-2: #0891b2; --ocean-3: #10b981; --ocean-4: #3b82f6;
+        --emerald-1: #10b981; --emerald-2: #059669; --emerald-3: #84cc16; --emerald-4: #06b6d4;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #020617;
+        font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        color: #f8fafc;
+        touch-action: manipulation;
+      }
+      
+      @keyframes gradientFlow {
+        0% { transform: translate(0, 0) rotate(0deg); }
+        50% { transform: translate(5%, 5%) rotate(5deg); }
+        100% { transform: translate(0, 0) rotate(0deg); }
+      }
+
+      @keyframes reactiveFocus {
+        0% { transform: scale(1) translate(0, 0); opacity: 0.15; filter: blur(120px); }
+        50% { transform: scale(1.1) translate(2%, 2%); opacity: 0.25; filter: blur(80px); }
+        100% { transform: scale(1) translate(0, 0); opacity: 0.15; filter: blur(120px); }
+      }
+
+      .mesh-blob {
+        position: absolute;
+        filter: blur(120px);
+        opacity: 0.15;
+        border-radius: 50%;
+        z-index: 0;
+        animation: gradientFlow 30s infinite ease-in-out;
+        transition: background-color 2s ease, filter 1s ease, opacity 1s ease;
+      }
+
+      .focus-mode-active .mesh-blob {
+        animation: reactiveFocus 10s infinite ease-in-out;
+      }
+
+      .glass {
+        background: rgba(15, 23, 42, 0.6);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+      }
+
+      .shimmer-text {
+        background: linear-gradient(
+          to right,
+          var(--accent-1, #60a5fa) 0%,
+          #f8fafc 50%,
+          var(--accent-1, #60a5fa) 100%
+        );
+        background-size: 200% auto;
+        color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+        animation: shine 12s linear infinite;
+      }
+
+      @keyframes shine {
+        to { background-position: 200% center; }
+      }
+
+      @keyframes softPulse {
+        0%, 100% { opacity: 0.8; transform: scale(1); }
+        50% { opacity: 1; transform: scale(1.02); }
+      }
+
+      .aura-pulse {
+        animation: softPulse 4s infinite ease-in-out;
+      }
+
+      ::-webkit-scrollbar {
+        width: 4px;
+        height: 4px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 10px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: rgba(255, 255, 255, 0.1);
+      }
+      
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+
+      /* Mobile Overrides */
+      .is-mobile body {
+        overflow-y: auto !important;
+      }
+      
+      @media (max-width: 768px) {
+        .glass {
+          backdrop-filter: blur(10px);
+        }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "@google/genai": "https://esm.sh/@google/genai@^1.42.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
