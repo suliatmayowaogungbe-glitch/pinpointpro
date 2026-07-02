@@ -5,7 +5,7 @@
 PinPoint Pro is a high-performance, context-aware digital workspace designed for deep work. It transforms your browser or desktop environment into a "pinned" productivity surface, using AI to intelligently manage window layouts, categorise research, and provide semantic search across your entire workspace.
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
-![Version: 1.0.0-beta](https://img.shields.io/badge/Version-1.0.0--beta-emerald)
+![Version: 1.0.0-beta](https://img.shields.io/badge/Version-1.0.0--beta-green)
 ![AI: Provider Agnostic](https://img.shields.io/badge/AI-Provider%20Agnostic-blueviolet)
 ![Preferred: Azure OpenAI](https://img.shields.io/badge/Preferred-Azure%20OpenAI-0078D4?logo=microsoft-azure)
 
